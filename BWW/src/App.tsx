@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/BaxarWoodWorkshop" element={<Main />} />
         </Routes>
         <Footer />
       </BrowserRouter>
