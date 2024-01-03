@@ -1,0 +1,43 @@
+.contact {
+    width: 100vw;
+    background-color: #6C0000;
+    color: white;
+    padding: 10vh 10vw;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: 5vw 70vw;
+    gap: 5vw;
+
+    h1 {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 5vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 0;
+        font-weight: 300;
+
+        p {
+            font-size: 110%;
+
+            b {
+                font-weight: 300;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        h2 {
+            font-size: 140%;
+            font-weight: 500;
+        }
+    }
+}

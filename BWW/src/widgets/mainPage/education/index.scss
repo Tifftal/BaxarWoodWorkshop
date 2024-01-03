@@ -1,0 +1,63 @@
+.education {
+    width: 100vw;
+    background-color: #E5DFDA;
+    color: rgb(0, 0, 0);
+    padding: 10vh 10vw 10vh 10vw;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: 5vw 70vw;
+    gap: 5vw;
+    align-self: flex-start;
+
+    h1 {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 5vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .education-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 110%;
+
+        h2 {
+            font-family: 'Spectral';
+            font-size: 140%;
+            font-weight: 700;
+            margin-bottom: 3%;
+        }
+
+        p {
+            margin-bottom: 3%;
+            font-weight: 400;
+
+            b {
+                font-weight: 500;
+            }
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+            transition: .5s;
+
+            img {
+                width: 35px;
+                margin-left: 10px;
+            }
+        }
+
+        button:hover {
+            transform: translate(5px, 0)
+        }
+
+    }
+}
