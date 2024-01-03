@@ -1,4 +1,11 @@
-import './index.scss'
+import './index.scss';
+import arrow from '../../../assets/img/Arrow 1.png';
+import mask from '../../../assets/img/DSC06552.jpg';
+import bratina from '../../../assets/img/DSC05235.jpg';
+import prahi from '../../../assets/img/DSC04913.jpg';
+import ded from '../../../assets/img/DSC03978.jpg';
+import koni from '../../../assets/img/DSC01460.jpg';
+import kartina from '../../../assets/img/DSC01784.jpg';
 
 const Works = () => {
     return (
@@ -7,30 +14,30 @@ const Works = () => {
                 <h1>Работы</h1>
             </div>
             <div className='works-content'>
-                <button>Перейти в каталог <img src='../../img/Arrow 1.png' /></button>
+                <button>Перейти в каталог <img src={arrow} /></button>
                 <section className="card">
                     <div className="card--content">
-                        <img src='../../img/DSC06552.jpg'/>
+                        <img src={mask}/>
                         <h2>Маски</h2>
                     </div>
                     <div className="card--content">
-                        <img src='../../img/DSC05235.jpg'/>
+                        <img src={bratina}/>
                         <h2>Братины</h2>
                     </div>
                     <div className="card--content">
-                        <img src='../../img/DSC04913.jpg'/>
+                        <img src={prahi}/>
                         <h2>Пряхи</h2>
                     </div>
                     <div className="card--content">
-                        <img src='../../img/DSC03978.jpg'/>
+                        <img src={ded}/>
                         <h2>Деды</h2>
                     </div>
                     <div className="card--content">
-                        <img src='../../img/DSC01460.jpg'/>
+                        <img src={koni}/>
                         <h2>Кони</h2>
                     </div>
                     <div className="card--content">
-                        <img src='../../img/DSC01784.jpg'/>
+                        <img src={kartina}/>
                         <h2>Картины</h2>
                     </div>
                     

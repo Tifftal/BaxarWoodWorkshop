@@ -1,9 +1,10 @@
-import './index.scss'
+import './index.scss';
+import image from '../../../assets/img/DSC05384.jpg'
 
 const Image = () => {
     return (
         <div className='image'>
-            <img src='../../img/DSC05384.jpg'/>
+            <img src={image}/>
         </div>
     )
 }

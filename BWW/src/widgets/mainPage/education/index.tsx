@@ -1,4 +1,5 @@
-import './index.scss'
+import './index.scss';
+import arrow from '../../../assets/img/Arrow 1.png'
 
 const Education = () => {
     return (
@@ -13,7 +14,7 @@ const Education = () => {
                     <p><b>Цель курса</b> – познакомить с основами и научить самостоятельно заниматься резьбой. По окончании будет возможность продолжить обучение на второй ступени.</p>
                 </div>
                 <div>
-                    <button>Узнать подробности <img src='../../img/Arrow 1.png' /></button>
+                    <button>Узнать подробности <img src={arrow} /></button>
                 </div>
             </div>
         </div>

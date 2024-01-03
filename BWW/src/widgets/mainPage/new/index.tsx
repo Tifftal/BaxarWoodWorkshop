@@ -1,4 +1,5 @@
-import './index.scss'
+import './index.scss';
+import icon from '../../../assets/img/IrpRm-oX_cI.jpg'
 
 const New = () => {
     return (
@@ -8,7 +9,7 @@ const New = () => {
             </div>
             <div className='new-content'>
                 <div className='left'>
-                    <img src='../../img/IrpRm-oX_cI.jpg' />
+                    <img src={icon} />
                 </div>
                 <div className='right'>
                     <h2>Икона "Никола"</h2>

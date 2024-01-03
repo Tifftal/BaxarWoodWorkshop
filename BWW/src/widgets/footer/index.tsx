@@ -1,12 +1,16 @@
 import { NavLink } from 'react-router-dom';
-import './index.scss'
+import './index.scss';
+import logo from '../../assets/img/logo-2.png';
+import tg from '../../assets/img/icons8-телеграм-100-2.png';
+import vk from '../../assets/img/icons8-vk-100-3.png';
+import inst from '../../assets/img/icons8-instagram-100-2.png';
 
 const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer-content'>
                 <div className='logo-footer'>
-                    <img src='../../img/logo-2.png' />
+                    <img src={logo} />
                     <div>
                         <h2>Мастерская Бахаря</h2>
                         <h3>Традиционная резьба и авторское творчество Алексея Блинова</h3>
@@ -36,9 +40,9 @@ const Footer = () => {
             <div className='social'>
                 <p>© 2015</p>
                 <p>baxarwoodworkshop@gmail.com</p>
-                <img src='../../img/icons8-телеграм-100-2.png' />
-                <img src='../../img/icons8-instagram-100-2.png' />
-                <img src='../../img/icons8-vk-100-2.png' />
+                <img src={tg} />
+                <img src={inst} />
+                <img src={vk} />
             </div>
         </div>
     )
