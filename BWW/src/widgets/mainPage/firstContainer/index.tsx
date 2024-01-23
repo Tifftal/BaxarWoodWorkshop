@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './index.scss'
 
 const FirstContainer = () => {
@@ -15,7 +16,7 @@ const FirstContainer = () => {
                 Алексея Блинова. Добро пожаловать в мир его таланта и уникальных
                 творений!
             </p>
-            <button>Перейти в каталог</button>
+            <NavLink to='/BaxarWoodWorkshop/catalog'><button>Перейти в каталог</button></NavLink>
         </div>
     )
 }

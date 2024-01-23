@@ -32,15 +32,16 @@ const NavBar = () => {
             <Navbar expand="lg" className="navbar" fixed="top">
                 <div className='nav-group nav-group-left'>
                     <NavLink to='#' className='dropdown-img' onClick={handleShow}><img src={menu} /></NavLink>
-                    <NavLink to='#'>Каталог</NavLink>
+                    <NavLink to='/BaxarWoodWorkshop/catalog'>Каталог</NavLink>
                 </div>
                 <div className='nav-group nav-group-center'>
-                    <NavLink to='#'><img src={logo} />Мастерская Бахаря</NavLink>
+                    <NavLink to='/BaxarWoodWorkshop/'><img src={logo} />Мастерская Бахаря</NavLink>
                 </div>
                 <div className='nav-group nav-group-right'>
-                    <NavLink to='#'>Профиль</NavLink>
+                    <NavLink to='/BaxarWoodWorkshop/account'>Профиль</NavLink>
+                    <NavLink to='/BaxarWoodWorkshop/admin'>Управление</NavLink>
                     <NavLink to='#'>Избранное</NavLink>
-                    <NavLink to='#'>Корзина</NavLink>
+                    <NavLink to='/BaxarWoodWorkshop/bag'>Корзина</NavLink>
                 </div>
             </Navbar>
             <Offcanvas show={show} onHide={handleClose} className='drop-menu'>

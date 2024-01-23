@@ -1,0 +1,14 @@
+.account-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        width: fit-content;
+        padding: 0;
+        text-align: left;
+        background: none;
+        border: none;
+        margin: 10px 0;
+        font-size: 100%;
+    }
+}

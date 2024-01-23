@@ -1,0 +1,53 @@
+.personal {
+    width: fit-content;
+    margin-left: 5vw;
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        margin: 20px 0;
+
+        p {
+            width: 10vw;
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        h5 {
+            font-size: 100%;
+            padding: 0;
+            margin: 0;
+            width: 10vw;
+        }
+    }
+    button {
+        background: none;
+        background-color: #610000;
+        margin-top: 20px;
+        font-size: 90%;
+        border: none;
+        border-radius: 20px;
+        color: rgb(255, 255, 255);
+        padding: 3px 15px;
+        transition: .3s;
+    }
+
+    button:hover {
+        filter: brightness(1.4);
+    }
+}
+
+.orders {
+    height: 70vh;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1vw;
+}
+
+.orders::-webkit-scrollbar {
+    width: 0;
+}

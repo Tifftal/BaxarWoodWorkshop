@@ -27,10 +27,20 @@
 		font-size: 110%;
 		font-weight: 400;
 		transition: .3s;
+
+		a {
+			color: white;
+			text-decoration: none;
+		}
 	}
 
 	button:hover {
 		background-color: white;
 		color: black;
+
+		a {
+			color: black;
+			text-decoration: none;
+		}
 	}
 }
