@@ -1,0 +1,40 @@
+.bag {
+    padding: 40px 10vw;
+    background-color: #E5DFDA;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-height: calc(100vh - 80px);
+    overflow-y: hidden;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        padding-right: 20px;
+        width: 65%;
+        border-right: 1px solid  rgba(97, 76, 59, 0.25);
+        overflow-y: scroll;
+        max-height: calc(100vh - 80px - 80px);
+    }
+
+    &-content::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &-pay {
+        padding-left: 20px;
+        width: 35%;
+
+        &-content {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+    }
+}

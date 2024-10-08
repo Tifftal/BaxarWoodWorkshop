@@ -1,0 +1,39 @@
+.bag-card {
+    width: 100%;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(97, 76, 59, 0.25);
+    gap: 15px;
+
+    &-img {
+        height: 180px;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+
+        h1 {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 0.9em;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+    }
+}
+
+.bag-card:last-child {
+    border: none;
+}

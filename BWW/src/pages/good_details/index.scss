@@ -1,11 +1,9 @@
 .details {
-    padding: 13vh 6vw;
+    padding: 40px 6vw;
     background-color: #E5DFDA;
     display: flex;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
     color: black;
-    // height: 100vh;
 
     a {
         color: black;
@@ -24,7 +22,7 @@
     }
 
     .details-content {
-        margin: 3vh 3vw 0 3vw;
+        margin: 20px 3vw 0 3vw;
         display: flex;
         flex-direction: row;
         gap: 3vw;
@@ -34,12 +32,6 @@
                 display: flex;
                 flex-direction: row;
                 gap: 1vw;
-
-                // img {
-                //     width: 25vw;
-                //     height: 35vw;
-                //     object-fit: cover;
-                // }
             }
 
             .photo-panel {

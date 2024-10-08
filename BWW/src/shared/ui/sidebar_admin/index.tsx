@@ -5,6 +5,7 @@ import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import delete_btn from '../../../assets/img/icons8-крестик-78.png';
 import edit_btn from '../../../assets/img/icons8-редактировать-96.png';
+import { getAllCategories } from '../../../api/category/category';
 
 
 interface CategoryWithGoods {
@@ -40,7 +41,7 @@ const TabAdmin = (props: any) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`/api/good/categories/`)
+        getAllCategories()
             .then(response => {
                 const categories = response.data.categories;
                 axios.get(`/api/good/?category=&color=`)
@@ -77,16 +78,13 @@ const TabAdmin = (props: any) => {
     }, []);
 
     function formatDateString(inputDate: string | null): string | null {
-        // Разбиваем строку с датой
         if (inputDate !== null) {
             const [year, month, day] = inputDate.substring(0, 10).split('-');
 
-            // Словарь с названиями месяцев
             const monthNames: string[] = [
                 'янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
             ];
 
-            // Форматирование даты в нужный формат
             const formattedDate: string = `${+day} ${monthNames[+month - 1]} ${year}`;
 
             return formattedDate;
