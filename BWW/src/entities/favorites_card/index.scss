@@ -1,4 +1,4 @@
-.good-card {
+.favorites-card {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,6 @@
     }
 }
 
-.good-card:hover {
+.favorites-card:hover {
     filter: brightness(1.2);
 }

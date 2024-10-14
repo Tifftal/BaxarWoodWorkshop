@@ -62,7 +62,7 @@ const NavBar = () => {
                 <div className='nav-group nav-group-right'>
                     <NavLink to='/BaxarWoodWorkshop/account'>Профиль</NavLink>
                     <NavLink to='/BaxarWoodWorkshop/admin'>Управление</NavLink>
-                    <NavLink to='#'>Избранное</NavLink>
+                    <NavLink to='/BaxarWoodWorkshop/favorites'>Избранное</NavLink>
                     <NavLink to='/BaxarWoodWorkshop/bag'>Корзина</NavLink>
                 </div>
             </Flex>

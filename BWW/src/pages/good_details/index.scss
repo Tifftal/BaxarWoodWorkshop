@@ -5,10 +5,11 @@
     flex-direction: column;
     color: black;
 
-    a {
+    &-back {
         color: black;
         text-decoration: none;
         transition: .5s;
+        cursor: pointer;
 
         img {
             transform: rotate(180deg);
@@ -17,7 +18,7 @@
         }
     }
 
-    a:hover {
+    &-back:hover {
         transform: translate(-5px, 0)
     }
 
@@ -74,6 +75,7 @@
                 padding: 0.5vh 0;
                 transition: .3s;
                 font-size: 100%;
+                cursor: pointer;
             }
 
             .in-bag:hover {
@@ -92,6 +94,7 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                cursor: pointer;
 
                 img {
                     width: 35px;

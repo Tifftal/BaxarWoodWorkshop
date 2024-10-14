@@ -2,10 +2,25 @@ import './index.scss';
 import koni from '../../assets/img/DSC01460.jpg'
 import { ActionIcon, Button, Flex } from '@mantine/core';
 import { IconStar, IconX } from '@tabler/icons-react';
+import { RemoveFromBag } from '../../api/bag/bag';
+import { useNavigate } from 'react-router-dom';
 
-const BagCard = ({ good }: any) => {
+const BagCard = ({ good, setGoods }: any) => {
+    const navigate = useNavigate();
+
+    const HandleRemoveFromBag = () => {
+        RemoveFromBag(good.id_good)
+            .then(res => {
+                console.log(res)
+                setGoods(state => state.filter(item => item.id_good !== good.id_good))
+            })
+            .catch(e => {
+                console.error(e)
+            })
+    }
+
     return (
-        <div className='bag-card'>
+        <div className='bag-card' onClick={()=>navigate(`/BaxarWoodWorkshop/details/${good.id_good}`)}>
             <img src={good.image_link || koni} className='bag-card-img' />
             <div className='bag-card-info'>
                 <Flex direction={'column'} align={'flex-start'} gap={'10px'} w={'100%'}>
@@ -13,8 +28,9 @@ const BagCard = ({ good }: any) => {
                         <h1>{good.name}</h1>
                         <ActionIcon
                             variant='transparent'
+                            onClick={() => HandleRemoveFromBag()}
                         >
-                            <IconX stroke={1.2}/>
+                            <IconX stroke={1.2} />
                         </ActionIcon>
                     </Flex>
                     <Flex direction={'column'} align={'flex-start'} gap={'5px'}>

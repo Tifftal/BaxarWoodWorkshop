@@ -13,6 +13,7 @@ import EditGood from './pages/edit_good';
 import Bag from './pages/bag';
 import Test from './pages/test/test';
 import { createTheme, MantineProvider } from '@mantine/core';
+import Favorites from './pages/favorites';
 
 function App() {
   const theme = createTheme({
@@ -48,6 +49,7 @@ function App() {
           <Route path="/BaxarWoodWorkshop/add_good" element={<AddGood />} />
           <Route path="/BaxarWoodWorkshop/edit/:id" element={<EditGood />} />
           <Route path="/BaxarWoodWorkshop/bag" element={<Bag />} />
+          <Route path="/BaxarWoodWorkshop/favorites" element={<Favorites />} />
           <Route path="/BaxarWoodWorkshop/test" element={<Test />} />
         </Routes>
         <Footer />

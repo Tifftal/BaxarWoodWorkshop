@@ -1,4 +1,4 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './index.scss';
 import arrow from '../../assets/img/Arrow 1.png';
 import liked from '../../assets/img/icons8-сердце-96-3.png';
@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import PhotoSlider from '../../widgets/good_slider';
 import { getGoodById } from '../../api/good/good';
 import { AddToBag } from '../../api/bag/bag';
+import { AddToFavorites } from '../../api/favorites/favorites';
 
 interface Good {
     category_id: number;
@@ -28,15 +29,11 @@ interface Good {
 }
 
 const GoodDetail = () => {
-    const [star, setStar] = useState(false);
-    const [countInBag, setCountInBag] = useState(false);
-
-    const handleAddToStars = () => {
-        setStar((prevStar) => !prevStar);
-    }
-
     const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
 
+    const [star, setStar] = useState(false);
+    const [isInBag, setIsInBag] = useState(false);
     const [data, setData] = useState<Good | undefined>();
     const [photos, setPhotos] = useState<any>([])
 
@@ -46,7 +43,8 @@ const GoodDetail = () => {
             .then(response => {
                 console.log(response.data)
                 setData(response.data.good)
-                setCountInBag(response.data.is_in_bag)
+                setIsInBag(response.data.is_in_bag)
+                setStar(response.data.is_in_favorites)
                 const photoArray: ((url: string) => string)[] = []
                 response.data.photos.map((photo: string) => {
                     photoArray.push(photo.link)
@@ -57,14 +55,27 @@ const GoodDetail = () => {
             .catch(error => {
                 console.log(error)
             })
-    }, [])
+    }, []);
+
+    const handleAddToStars = () => {
+        if (!star) {
+            setStar((prevStar) => !prevStar);
+            AddToFavorites(Number(id))
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(e => {
+                    console.error(e)
+                })
+        }
+    }
 
     const HandleAddToBag = () => {
-        if (!countInBag) {
+        if (!isInBag) {
             AddToBag(Number(id))
                 .then(res => {
                     console.log(res)
-                    setCountInBag(true)
+                    setIsInBag(true)
                 })
                 .catch(e => {
                     console.error(e)
@@ -74,7 +85,7 @@ const GoodDetail = () => {
 
     return (
         <div className='details'>
-            <NavLink to='/BaxarWoodWorkshop/catalog'><img src={arrow} />Обратно в каталог</NavLink>
+            <div className='details-back' onClick={() => navigate(-1)}><img src={arrow} />Обратно</div>
             <div className='details-content'>
                 <div className='details-slider'>
                     <div className='photo-slider'>
@@ -95,7 +106,7 @@ const GoodDetail = () => {
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'row', gap: '1vw' }}>
                         <button className='in-bag' onClick={HandleAddToBag}>
                             {
-                                countInBag === false ? 'В корзину' : 'Добавлено'
+                                isInBag === false ? 'В корзину' : 'Добавлено'
                             }
                         </button>
                         <button className='in-stars' onClick={handleAddToStars}>

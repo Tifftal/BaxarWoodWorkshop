@@ -14,13 +14,15 @@ const Bag = () => {
         GetAllInBag()
             .then(res => {
                 setGoods(res.data)
-                setTotalPrice(goods.reduce((sum, good) => sum + Number(good.price), 0)
-                )
             })
             .catch(e => {
                 console.error(e)
             })
     }, []);
+
+    useEffect(() => {
+        setTotalPrice(goods.reduce((sum, good) => sum + good.price, 0))
+    }, [goods])
 
     return (
         <div className='bag'>
@@ -42,7 +44,7 @@ const Bag = () => {
                 </Flex>
                 {
                     goods.map((item, index) => (
-                        <BagCard key={index} good={item} />
+                        <BagCard key={index} good={item} setGoods={setGoods} />
                     ))
                 }
             </div>
